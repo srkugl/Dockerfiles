@@ -21,6 +21,8 @@ services:
       - DB_HOST=expense-mysql
     networks:
       - expense
+    depends_on:
+      - db
 
   frontend:
     image: frontend:1.0
@@ -29,6 +31,8 @@ services:
       - "80:80"
     networks:
       - expense
+    depends_on:
+      - backend
       
 networks:
   expense:
