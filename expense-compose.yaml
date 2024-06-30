@@ -12,6 +12,7 @@ services:
     networks:
       - expense
     volumes:
+      - mysql_data:/var/lib/mysql
       - ./scripts:/docker-entrypoint-initdb.d
 
   backend:
@@ -38,3 +39,5 @@ services:
 networks:
   expense:
     driver: bridge
+volumes:
+  mysql_data:
