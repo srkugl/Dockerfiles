@@ -23,6 +23,7 @@ services:
       - expense
     depends_on:
       - db
+    entrypoint: ["sh", "-c", "sleep 30 && npm start"]
 
   frontend:
     image: frontend:1.0
